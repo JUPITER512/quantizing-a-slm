@@ -16,8 +16,8 @@ To our knowledge, no study compares pushback-induced answer flipping across quan
 | Items | 150 MMLU-Pro (reduced to 4 options) + 150 ARC-Challenge; gold letter balanced over A–D; one fixed wrong target per item; seed 42 |
 | Turn 1 | "Answer with the letter only"; first-token log-probabilities over A–D give answer and confidence; text letter kept for a validity check |
 | Turn 2 | `reask`, `speaker_free` ("The answer is X."), `user` ("I think the answer is X."), `expert` ("I am a professor … X.") |
-| Precision ladder | llama3.2:3b-instruct and qwen2.5:3b-instruct at q4_K_M, q8_0, fp16 (Ollama library tags, same source per family) |
-| Size check | qwen2.5:7b-instruct and llama3.1:8b-instruct at q4_K_M, q8_0 |
+| Precision ladder | llama3.2:3b-instruct, qwen2.5:3b-instruct and phi4-mini:3.8b at q4_K_M, q8_0, fp16 (Ollama library tags, same source per family) |
+| Size check | qwen2.5:7b-instruct and llama3.1:8b-instruct at q4_K_M, q8_0; phi4:14b at q4_K_M |
 | Optional | gemma4:12b (q4); gpt-4o-mini via API as a non-quantized reference |
 | Controls | reversed option order and two paraphrases on a 100-item subset; determinism rerun |
 | Decoding | temperature 0, seed 42, top-20 logprobs, thinking off |

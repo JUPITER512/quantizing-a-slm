@@ -29,6 +29,13 @@ META = rp.model_meta("mock:3b-instruct-q4_K_M", "ollama", None, None)
     ("The correct answer is **D**", "D", "extracted"), ("answer: a", None, "not_a_letter"),
     ("B) carbon dioxide", "B", "extracted"), ("C. Nitrogen", "C", "extracted"),
     ("I would go with (A) because", "A", "extracted"),
+    ("D\n\nThe pedestrian entered the club without permission", "D", "extracted"),   # phi4:14b style
+    ("**C**\nBecause plants need it.", "C", "extracted"),
+    ("A\nB", None, "ambiguous"),
+    ("B) his intelligence  \nD) his height  \n\nTraits like", None, "ambiguous"),         # two answers
+    ("B  \nD  \n\nTraits like intelligence", None, "ambiguous"),
+    ("D) 1.0/8\n\nFirst cousins share, on average,", "D", "extracted"),
+    ("C\n\nA monopsony, being the sole buyer", "C", "extracted"),                  # "A" inside prose is fine
     ("<think>maybe A or B</think>\nC", "C", "ok"),
     ("<think>still thinking about A", None, "not_a_letter"),
     ("A plant takes in carbon dioxide.", None, "not_a_letter"),
@@ -93,6 +100,8 @@ def test_model_meta_and_windows_safe_file_names(tmp_path):
     assert rp.model_meta("gpt-4o-mini", "openai", None, None)["precision"] == "api"
     m = rp.model_meta("phi4-mini:3.8b-fp16", "ollama", None, None)
     assert (m["precision"], m["family"]) == ("fp16", "phi4-mini-3.8b")
+    m = rp.model_meta("phi4:14b-q4_K_M", "ollama", None, None)
+    assert (m["precision"], m["family"]) == ("q4_K_M", "phi4-14b")
     p = rp.out_file(tmp_path, "hf.co/x/y:Q8_0", "reversed", True, None)
     assert p.name == "hf.co_x_y_Q8_0__reversed.jsonl"
     assert rp.out_file(tmp_path, "a:b", "main", False, "pilot20").name == "a_b__main__pilot20.jsonl"

@@ -20,6 +20,9 @@ Third family added on 24.09.2026, before the pre-registration commit (all three 
 |---|---|---|---|---|
 | Qwen2.5 7B Instruct | `qwen2.5:7b-instruct-q4_K_M` · `qwen2.5:7b-instruct-q8_0` | 4.7 / 8.1 GB | q4 yes; q8 with heavy offload | [Ollama](https://ollama.com/library/qwen2.5) · [model card](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) |
 | Llama 3.1 8B Instruct | `llama3.1:8b-instruct-q4_K_M` · `llama3.1:8b-instruct-q8_0` | 4.9 / 8.5 GB | q4 yes; q8 with heavy offload | [Ollama](https://ollama.com/library/llama3.1) · [tags](https://ollama.com/library/llama3.1/tags) · [model card](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) |
+| Phi-4 14B | `phi4:14b-q4_K_M` only | 9.1 GB | no: heavy CPU offload (~1 h per run) | [Ollama](https://ollama.com/library/phi4) · [tags](https://ollama.com/library/phi4/tags) · [model card](https://huggingface.co/microsoft/phi-4) |
+
+Phi-4 14B added on 24.09.2026, before the pre-registration commit. Only q4_K_M: q8_0 (15.6 GB) and fp16 (29.3 GB) would run almost entirely on the CPU. Its RQ4 pair is Phi-4-mini 3.8B fp16 (7.7 GB): similar memory, more parameters at 4 bits vs fewer at 16 bits, same developer. Like Llama 3.1 8B vs 3.2 3B, the two are separately trained models, so the comparison is descriptive only.
 
 Your existing `qwen2.5:7b` and `llama3.1:8b` are the q4_K_M builds; confirm with `ollama show qwen2.5:7b` and reuse them.
 
@@ -47,6 +50,7 @@ Pull syntax: `ollama pull hf.co/<user>/<repo>:<quant>` ([Hugging Face docs](http
 |---|---|---|
 | Llama 3.1 / 3.2 | Abhimanyu Dubey et al. 2024. The Llama 3 Herd of Models. [arXiv:2407.21783](https://arxiv.org/abs/2407.21783) | Llama 3.1 / Llama 3.2 Community License; read its attribution clause |
 | Qwen2.5 | An Yang et al. 2024. Qwen2.5 Technical Report. [arXiv:2412.15115](https://arxiv.org/abs/2412.15115) | 7B: Apache 2.0; 3B: Qwen research licence (check the card) |
+| Phi-4 | Marah Abdin et al. 2024. Phi-4 Technical Report. [arXiv:2412.08905](https://arxiv.org/abs/2412.08905) | MIT (confirm on the card) |
 | Phi-4-mini | Microsoft. 2025. Phi-4-Mini Technical Report. [arXiv:2503.01743](https://arxiv.org/abs/2503.01743) (check the citation on the model card) | MIT (confirm on the card) |
 | Gemma 4 | Google's Gemma 4 model card (via the Ollama page) | Apache 2.0 |
 | GPT-4o mini | OpenAI. 2024. GPT-4o System Card. [arXiv:2410.21276](https://arxiv.org/abs/2410.21276) | API terms of use |
@@ -90,6 +94,7 @@ Pull syntax: `ollama pull hf.co/<user>/<repo>:<quant>` ([Hugging Face docs](http
 | Llama 3.2 3B ladder | ~12 GB |
 | Qwen2.5 3B ladder | ~11 GB |
 | Phi-4-mini 3.8B ladder | ~14 GB |
+| Phi-4 14B q4_K_M | ~9 GB |
 | Qwen2.5 7B q8_0 + Llama 3.1 8B q8_0 | ~17 GB |
 | Gemma 4 12B | ~8 GB |
 | **Total** | **~48 GB** |
