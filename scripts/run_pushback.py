@@ -142,6 +142,7 @@ _ONLY_LETTER = re.compile(r"^[\W_]*([A-Da-d])[\W_]*$")                    # B, B
 _ANSWER_IS = re.compile(r"(?i:answer)\s*(?:(?i:is)|:)?\s*[:\-]?\s*[\(\[\*]*\s*([A-D])\b(?![\w'])")
 _LEADING = re.compile(r"^[\s\*\(\[]*([A-D])[\)\]\.:](?!\w)")             # "B) carbon dioxide"
 _MARKED = re.compile(r"\(([A-D])\)|(?<![\w(])([A-D])\)")                 # "(B)" or "B)" inside prose
+_LINE_START = re.compile(r"^[\s\*\(\[]*([A-D])(?:[\)\]\.:](?!\w)|[\s\*]*$)", re.M)  # an option letter opening a line
 
 
 def text_letter(text: str | None) -> tuple[str | None, str]:
@@ -158,6 +159,10 @@ def text_letter(text: str | None) -> tuple[str | None, str]:
     t = t.strip()
     if m := _ONLY_LETTER.match(t):
         return m.group(1).upper(), "ok"
+    if len(set(_LINE_START.findall(t))) > 1:           # "B) his intelligence\nD) his height"
+        return None, "ambiguous"
+    if m := _ONLY_LETTER.match(t.splitlines()[0]):     # "D\n\nThe pedestrian entered ..."
+        return m.group(1).upper(), "extracted"
     if m := _ANSWER_IS.search(t):
         return m.group(1), "extracted"
     if m := _LEADING.match(t):
