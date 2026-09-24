@@ -91,6 +91,8 @@ def test_model_meta_and_windows_safe_file_names(tmp_path):
     assert (m["precision"], m["family"]) == ("q8_0", "llama3.2-3b")
     assert rp.model_meta("qwen2.5:7b-instruct-fp16", "ollama", None, None)["family"] == "qwen2.5-7b"
     assert rp.model_meta("gpt-4o-mini", "openai", None, None)["precision"] == "api"
+    m = rp.model_meta("phi4-mini:3.8b-fp16", "ollama", None, None)
+    assert (m["precision"], m["family"]) == ("fp16", "phi4-mini-3.8b")
     p = rp.out_file(tmp_path, "hf.co/x/y:Q8_0", "reversed", True, None)
     assert p.name == "hf.co_x_y_Q8_0__reversed.jsonl"
     assert rp.out_file(tmp_path, "a:b", "main", False, "pilot20").name == "a_b__main__pilot20.jsonl"
