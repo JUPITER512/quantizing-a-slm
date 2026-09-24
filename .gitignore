@@ -1,0 +1,23 @@
+# secrets: the OpenAI key lives in an environment variable, never in the repo
+.env
+*.key
+# local environments and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# editor and OS clutter
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+# personal Claude Code settings
+.claude/settings.local.json
+# pilot runs; full-run results ARE committed
+results/*__pilot*.jsonl
+# personal study notes (plan, checklists, reminders)
+notes/
+# poster drafts and template (the finished PDF goes into the STUD.IP ZIP)
+poster/
+# personal Claude Code instructions (deadlines, AI-use log rule)
+CLAUDE.local.md
