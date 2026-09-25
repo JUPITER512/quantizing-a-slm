@@ -1,4 +1,4 @@
-"""Unit tests for scripts/analyze.py on small synthetic data."""
+"""Tests for scripts/analyze.py on small made-up data."""
 import json
 from pathlib import Path
 
@@ -8,8 +8,6 @@ import pytest
 
 import analyze as A
 
-
-# ---------------------------------------------------------------- helpers
 
 def test_run_of_file_names():
     assert A.run_of(Path("m_x__main.jsonl")) == "main"
@@ -25,13 +23,12 @@ def test_cohens_h():
 
 def test_ece_perfect_and_known_value():
     assert A.ece([1.0, 1.0], [1, 1]) == 0
-    # all at confidence 0.9, accuracy 0.5 -> |0.5 - 0.9| = 0.4
-    assert A.ece([0.9] * 4, [1, 1, 0, 0]) == pytest.approx(0.4)
+    assert A.ece([0.9] * 4, [1, 1, 0, 0]) == pytest.approx(0.4)  # confidence 0.9, accuracy 0.5
 
 
 def test_mcnemar_exact_uses_discordant_pairs():
     assert A.mcnemar_p(0, 0) == 1.0
-    assert A.mcnemar_p(10, 0) == pytest.approx(2 * 0.5 ** 10)   # exact binomial, two-sided
+    assert A.mcnemar_p(10, 0) == pytest.approx(2 * 0.5 ** 10)
 
 
 def test_wilson_ci_known_values():
@@ -54,20 +51,19 @@ def test_boot_diff_ci_zero_when_identical():
     assert lo == 0 and hi == 0
 
 
-# ---------------------------------------------------------------- pairing and comparison
-
-def rec(family, precision, item, condition, correct0, harmful, c0=0.8):
+def record(family, precision, item, condition, correct0, harmful, c0=0.8):
     return {"family": family, "precision": precision, "item_id": item, "condition": condition,
             "correct_0": correct0, "harmful": harmful, "c0": c0}
 
 
 def test_paired_keeps_only_items_correct_at_both_precisions():
-    rows = [rec("f", "q4_K_M", "i1", "user", True, True), rec("f", "fp16", "i1", "user", True, False),
-            rec("f", "q4_K_M", "i2", "user", True, True), rec("f", "fp16", "i2", "user", False, None),
-            rec("f", "q4_K_M", "i3", "user", True, None), rec("f", "fp16", "i3", "user", True, True)]
+    rows = [record("f", "q4_K_M", "i1", "user", True, True), record("f", "fp16", "i1", "user", True, False),
+            record("f", "q4_K_M", "i2", "user", True, True), record("f", "fp16", "i2", "user", False, None),
+            record("f", "q4_K_M", "i3", "user", True, None), record("f", "fp16", "i3", "user", True, True)]
     df = pd.DataFrame(rows).astype({"correct_0": "boolean", "harmful": "boolean"})
-    p = A.paired(df, "user", "q4_K_M", "fp16")
-    assert list(p["item_id"]) == ["i1"] and bool(p["harmful_a"][0]) and not bool(p["harmful_b"][0])
+    pairs = A.paired(df, "user", "q4_K_M", "fp16")
+    assert list(pairs["item_id"]) == ["i1"]
+    assert bool(pairs["harmful_a"][0]) and not bool(pairs["harmful_b"][0])
 
 
 def test_compare_counts_and_direction():
@@ -75,13 +71,11 @@ def test_compare_counts_and_direction():
                           "harmful_a": [True, True, True, False, False, True],
                           "harmful_b": [True, False, False, False, True, True],
                           "c0_a": 0.9, "c0_b": 0.9})
-    r = A.compare(pairs)
-    assert (r["both_harmful"], r["only_a"], r["only_b"], r["neither"]) == (2, 2, 1, 1)
-    assert r["hfr_a"] == pytest.approx(4 / 6) and r["diff_a_minus_b"] == pytest.approx(1 / 6)
-    assert r["p_mcnemar_exact"] == pytest.approx(1.0)
+    result = A.compare(pairs)
+    assert (result["both_harmful"], result["only_a"], result["only_b"], result["neither"]) == (2, 2, 1, 1)
+    assert result["hfr_a"] == pytest.approx(4 / 6) and result["diff_a_minus_b"] == pytest.approx(1 / 6)
+    assert result["p_mcnemar_exact"] == pytest.approx(1.0)
 
-
-# ---------------------------------------------------------------- loading
 
 def test_load_results_skips_pilots_errors_and_keeps_last(tmp_path):
     base = {"model": "m:q4_K_M", "variant": "main", "item_id": "i1", "condition": "user", "error": None,
