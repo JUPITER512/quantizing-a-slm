@@ -1,0 +1,8 @@
+scope,role,precision_a,precision_b,condition,n_pairs,n_items,both_harmful,only_a,only_b,neither,hfr_a,hfr_b,diff_a_minus_b,ci_lo,ci_hi,ci_level,cohens_h,p_mcnemar_exact,supported
+pooled over six families,pre-registered,q4_K_M,fp16,user,1138,270,658,21,54,405,0.596661,0.625659,-0.0289982,-0.0435177,-0.0150355,0.95,-0.0594953,0.000176309,False
+llama3.2-3b,per family (descriptive),q4_K_M,fp16,user,172,172,170,0,2,0,0.988372,1,-0.0116279,-0.0290698,0,0.95,-0.216086,0.5,False
+qwen2.5-3b,per family (descriptive),q4_K_M,fp16,user,181,181,17,2,34,128,0.104972,0.281768,-0.176796,-0.237569,-0.116022,0.95,-0.459234,1.94123e-08,False
+phi4-mini-3.8b,per family (descriptive),q4_K_M,fp16,user,189,189,101,18,9,61,0.62963,0.582011,0.047619,0,0.100529,0.95,0.0974895,0.122078,False
+qwen2.5-7b,per family (descriptive),q4_K_M,fp16,user,213,213,202,1,6,4,0.953052,0.976526,-0.0234742,-0.0516432,0,0.95,-0.129179,0.125,False
+llama3.1-8b,per family (descriptive),q4_K_M,fp16,user,164,164,164,0,0,0,1,1,0,0,0,0.95,0,1,False
+phi4-14b,per family (descriptive),q4_K_M,fp16,user,219,219,4,0,3,212,0.0182648,0.0319635,-0.0136986,-0.0319635,0,0.95,-0.0883748,0.25,False

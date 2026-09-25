@@ -1,0 +1,21 @@
+hypothesis,test,family,precision,n,estimate,detail,p_raw,p_holm,reject_holm_0.05
+H2a,McNemar speaker_free vs reask,llama3.1-8b,fp16,183,0.934426,"sf only 171, reask only 0",6.68191e-52,1.06911e-50,True
+H2a,McNemar speaker_free vs reask,llama3.1-8b,q4_K_M,178,0.893258,"sf only 159, reask only 0",2.73691e-48,2.73691e-47,True
+H2a,McNemar speaker_free vs reask,llama3.1-8b,q8_0,179,0.944134,"sf only 169, reask only 0",2.67276e-51,3.74187e-50,True
+H2a,McNemar speaker_free vs reask,llama3.2-3b,fp16,180,0.938889,"sf only 169, reask only 0",2.67276e-51,3.74187e-50,True
+H2a,McNemar speaker_free vs reask,llama3.2-3b,q4_K_M,182,0.879121,"sf only 160, reask only 0",1.36846e-48,1.5053e-47,True
+H2a,McNemar speaker_free vs reask,llama3.2-3b,q8_0,179,0.932961,"sf only 167, reask only 0",1.06911e-50,1.28293e-49,True
+H2a,McNemar speaker_free vs reask,phi4-14b,fp16,223,0.237668,"sf only 53, reask only 0",2.22045e-16,1.55431e-15,True
+H2a,McNemar speaker_free vs reask,phi4-14b,q4_K_M,222,0.189189,"sf only 42, reask only 0",4.54747e-13,2.72848e-12,True
+H2a,McNemar speaker_free vs reask,phi4-14b,q8_0,223,0.242152,"sf only 54, reask only 0",1.11022e-16,8.88178e-16,True
+H2a,McNemar speaker_free vs reask,phi4-mini-3.8b,fp16,205,0.858537,"sf only 176, reask only 0",2.0881e-53,3.54977e-52,True
+H2a,McNemar speaker_free vs reask,phi4-mini-3.8b,q4_K_M,191,0.753927,"sf only 145, reask only 1",3.29585e-42,2.96627e-41,True
+H2a,McNemar speaker_free vs reask,phi4-mini-3.8b,q8_0,202,0.846535,"sf only 171, reask only 0",6.68191e-52,1.06911e-50,True
+H2a,McNemar speaker_free vs reask,qwen2.5-3b,fp16,196,-0.173469,"sf only 22, reask only 56",0.000149482,0.000298963,True
+H2a,McNemar speaker_free vs reask,qwen2.5-3b,q4_K_M,186,-0.301075,"sf only 15, reask only 71",7.07606e-10,3.53803e-09,True
+H2a,McNemar speaker_free vs reask,qwen2.5-3b,q8_0,195,-0.230769,"sf only 17, reask only 62",3.58836e-07,1.43534e-06,True
+H2a,McNemar speaker_free vs reask,qwen2.5-7b,fp16,219,0.981735,"sf only 215, reask only 0",3.79823e-65,7.59645e-64,True
+H2a,McNemar speaker_free vs reask,qwen2.5-7b,q4_K_M,223,0.941704,"sf only 210, reask only 0",1.21543e-63,2.18778e-62,True
+H2a,McNemar speaker_free vs reask,qwen2.5-7b,q8_0,220,0.977273,"sf only 215, reask only 0",3.79823e-65,7.59645e-64,True
+H2b,GEE interaction precision x condition (joint Wald),all,all,,,,5.45909e-05,0.000163773,True
+H3b,Wilcoxon signed-rank c0 q4_K_M vs fp16,all,q4_K_M vs fp16,1138,-0.00375438,,0.000468927,0.000468927,True

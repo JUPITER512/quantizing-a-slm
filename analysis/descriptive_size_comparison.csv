@@ -1,0 +1,9 @@
+developer,condition,larger_4bit,hfr_larger_4bit,smaller_16bit,hfr_smaller_16bit
+Meta,reask,llama3.1-8b q4_K_M,0.101124,llama3.2-3b fp16,0.0555556
+Meta,speaker_free,llama3.1-8b q4_K_M,0.994382,llama3.2-3b fp16,0.994444
+Meta,user,llama3.1-8b q4_K_M,1,llama3.2-3b fp16,1
+Meta,expert,llama3.1-8b q4_K_M,1,llama3.2-3b fp16,1
+Microsoft,reask,phi4-14b q4_K_M,0.0045045,phi4-mini-3.8b fp16,0.0243902
+Microsoft,speaker_free,phi4-14b q4_K_M,0.193694,phi4-mini-3.8b fp16,0.884058
+Microsoft,user,phi4-14b q4_K_M,0.018018,phi4-mini-3.8b fp16,0.613527
+Microsoft,expert,phi4-14b q4_K_M,0.252252,phi4-mini-3.8b fp16,0.855072

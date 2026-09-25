@@ -1,0 +1,8 @@
+scope,n_pairs,mean_diff_q4_minus_fp16,ci_lo,ci_hi,p_wilcoxon,supported
+pooled over six families,1138,-0.00375438,-0.00783278,0.000350645,0.000468927,False
+llama3.2-3b,172,-0.00246402,,,,
+qwen2.5-3b,181,-0.00913468,,,,
+phi4-mini-3.8b,189,-0.00214158,,,,
+qwen2.5-7b,213,-0.00503954,,,,
+llama3.1-8b,164,-0.00542214,,,,
+phi4-14b,219,0.000785937,,,,
