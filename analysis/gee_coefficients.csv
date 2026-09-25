@@ -1,0 +1,36 @@
+model,term,coef,se,p,n_obs,n_items,converged
+without_log_c0,Intercept,-2.48086,0.194635,3.27407e-37,14380,284,True
+without_log_c0,"C(precision, Treatment('fp16'))[T.q4_K_M]",0.524732,0.191858,0.00623804,14380,284,True
+without_log_c0,"C(precision, Treatment('fp16'))[T.q8_0]",0.0662916,0.0899407,0.461086,14380,284,True
+without_log_c0,"C(condition, Treatment('reask'))[T.expert]",4.31728,0.200083,2.93061e-103,14380,284,True
+without_log_c0,"C(condition, Treatment('reask'))[T.speaker_free]",3.92251,0.195278,9.62827e-90,14380,284,True
+without_log_c0,"C(condition, Treatment('reask'))[T.user]",3.30716,0.193554,1.86963e-65,14380,284,True
+without_log_c0,C(family)[T.llama3.2-3b],0.0103939,0.0504215,0.836681,14380,284,True
+without_log_c0,C(family)[T.phi4-14b],-4.10002,0.311486,1.43693e-39,14380,284,True
+without_log_c0,C(family)[T.phi4-mini-3.8b],-1.04508,0.0990218,4.86625e-26,14380,284,True
+without_log_c0,C(family)[T.qwen2.5-3b],-1.90238,0.137295,1.16884e-43,14380,284,True
+without_log_c0,C(family)[T.qwen2.5-7b],-0.260114,0.0535149,1.17037e-06,14380,284,True
+without_log_c0,"C(precision, Treatment('fp16'))[T.q4_K_M]:C(condition, Treatment('reask'))[T.expert]",-0.864597,0.200559,1.62566e-05,14380,284,True
+without_log_c0,"C(precision, Treatment('fp16'))[T.q8_0]:C(condition, Treatment('reask'))[T.expert]",-0.134735,0.0927859,0.146473,14380,284,True
+without_log_c0,"C(precision, Treatment('fp16'))[T.q4_K_M]:C(condition, Treatment('reask'))[T.speaker_free]",-0.633854,0.197235,0.00131039,14380,284,True
+without_log_c0,"C(precision, Treatment('fp16'))[T.q8_0]:C(condition, Treatment('reask'))[T.speaker_free]",-0.102067,0.0913079,0.263636,14380,284,True
+without_log_c0,"C(precision, Treatment('fp16'))[T.q4_K_M]:C(condition, Treatment('reask'))[T.user]",-0.679666,0.195668,0.000513592,14380,284,True
+without_log_c0,"C(precision, Treatment('fp16'))[T.q8_0]:C(condition, Treatment('reask'))[T.user]",-0.0948577,0.0922653,0.303904,14380,284,True
+with_log_c0,Intercept,-2.5861,0.192787,4.98681e-41,14380,284,True
+with_log_c0,"C(precision, Treatment('fp16'))[T.q4_K_M]",0.525247,0.189661,0.00561608,14380,284,True
+with_log_c0,"C(precision, Treatment('fp16'))[T.q8_0]",0.0686157,0.0899483,0.445562,14380,284,True
+with_log_c0,"C(condition, Treatment('reask'))[T.expert]",4.35161,0.1969,3.11922e-108,14380,284,True
+with_log_c0,"C(condition, Treatment('reask'))[T.speaker_free]",3.95161,0.191969,3.76469e-94,14380,284,True
+with_log_c0,"C(condition, Treatment('reask'))[T.user]",3.32859,0.19013,1.26919e-68,14380,284,True
+with_log_c0,C(family)[T.llama3.2-3b],0.0117277,0.0504808,0.81629,14380,284,True
+with_log_c0,C(family)[T.phi4-14b],-4.02518,0.305287,1.07214e-39,14380,284,True
+with_log_c0,C(family)[T.phi4-mini-3.8b],-1.02985,0.0982362,1.02945e-25,14380,284,True
+with_log_c0,C(family)[T.qwen2.5-3b],-1.82659,0.143213,2.94712e-37,14380,284,True
+with_log_c0,C(family)[T.qwen2.5-7b],-0.166263,0.0620251,0.00734948,14380,284,True
+with_log_c0,"C(precision, Treatment('fp16'))[T.q4_K_M]:C(condition, Treatment('reask'))[T.expert]",-0.869524,0.198683,1.20635e-05,14380,284,True
+with_log_c0,"C(precision, Treatment('fp16'))[T.q8_0]:C(condition, Treatment('reask'))[T.expert]",-0.136723,0.0927086,0.140278,14380,284,True
+with_log_c0,"C(precision, Treatment('fp16'))[T.q4_K_M]:C(condition, Treatment('reask'))[T.speaker_free]",-0.635753,0.195132,0.00112173,14380,284,True
+with_log_c0,"C(precision, Treatment('fp16'))[T.q8_0]:C(condition, Treatment('reask'))[T.speaker_free]",-0.103485,0.0912303,0.256659,14380,284,True
+with_log_c0,"C(precision, Treatment('fp16'))[T.q4_K_M]:C(condition, Treatment('reask'))[T.user]",-0.682047,0.193584,0.000426262,14380,284,True
+with_log_c0,"C(precision, Treatment('fp16'))[T.q8_0]:C(condition, Treatment('reask'))[T.user]",-0.0959346,0.0921856,0.29803,14380,284,True
+with_log_c0,log_c0,-0.483218,0.177022,0.0063391,14380,284,True

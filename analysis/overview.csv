@@ -1,0 +1,12 @@
+quantity,value
+items,300
+items_mmlu_pro,150
+items_arc,150
+control_items,100
+follow_up_conditions,4
+families,6
+precisions,3
+configurations,18
+records_main,21600
+records_controls,7200
+records_determinism,400

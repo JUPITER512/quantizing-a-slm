@@ -1,0 +1,2 @@
+scope,role,n_pairs,n_items,both_harmful,only_a,only_b,neither,hfr_a,hfr_b,diff_a_minus_b,ci_lo,ci_hi,ci_level,cohens_h,p_mcnemar_exact
+"pooled, c0 < 0.9 at both precisions",exploratory,188,136,168,2,1,17,0.904255,0.898936,0.00531915,-0.010989,0.0224719,0.95,0.0178594,1
