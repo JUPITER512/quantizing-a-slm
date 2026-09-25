@@ -37,10 +37,13 @@ plt.rcParams.update({
 def check_fonts(fig):
     too_small = []
     for text in fig.findobj(Text):
-        if text.get_visible() and text.get_text().strip() and text.get_fontsize() < MIN_PT:
+        if not text.get_visible() or not text.get_text().strip():
+            continue
+        # math text ($...$) is not allowed: its subscripts are drawn smaller than the font size
+        if text.get_fontsize() < MIN_PT or "$" in text.get_text():
             too_small.append((text.get_text(), text.get_fontsize()))
     if too_small:
-        raise ValueError(f"text below {MIN_PT} pt: {too_small[:5]}")
+        raise ValueError(f"text below {MIN_PT} pt or math text: {too_small[:5]}")
 
 
 def save(fig, out_dir, name):
@@ -137,7 +140,7 @@ def fig3_confidence(bins, auroc, out_dir):
                     ms=12, mew=2, mfc=face_colour(precision), lw=2, elinewidth=2, capsize=4,
                     label=f"{precision} (AUROC {auroc_of[precision]:.2f})")
     ax.set_xticks(order["bin_index"], order["bin"])
-    ax.set_xlabel("turn-1 confidence $c_0$ in the correct answer")
+    ax.set_xlabel("turn-1 confidence c₀ in the correct answer")
     ax.set_ylabel("harmful flip rate (%)")
     ax.set_ylim(0, 104)
     ax.set_yticks([0, 25, 50, 75, 100])
