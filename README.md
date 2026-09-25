@@ -53,13 +53,25 @@ Everything not listed above is descriptive, robustness or exploratory, and the f
 
 ```
 data/        items.jsonl, followups.json        (frozen with the pre-registration, commit 099408a)
-scripts/     build_items.py -> run_pushback.py -> analyze.py -> make_figures.py
+cavein/      the Python package with all the logic (one module per job, see the table below)
+scripts/     command-line scripts: build_items.py -> run_pushback.py -> analyze.py -> make_figures.py
 results/     raw model outputs, one JSONL per configuration and variant (read-only since tag data-frozen)
 analysis/    CSV tables written by analyze.py
 figures/     SVG figures written by make_figures.py
-tests/       unit tests and a mock Ollama server
+tests/       one test file per module, plus a fake Ollama server (tests/mock_ollama.py)
 docs/        models, datasets, references, flow diagrams
 ```
+
+| Module (`cavein/`) | Job |
+|---|---|
+| `config.py` | paths and every fixed setting (seed, decoding, analysis settings) |
+| `prompts.py`, `dataset.py`, `items.py` | follow-up wording and prompts; building the 300-item sample; loading and selecting items |
+| `parsing.py` | answer letter from the reply text; letter probabilities from the top-20 log-probs |
+| `backend.py`, `records.py`, `environment.py`, `runner.py` | requests to Ollama; one result line per item × follow-up and resuming; `env_info.txt`; the run loop |
+| `stats.py`, `results.py` | bootstrap, exact McNemar, Wilson, ECE, Cohen's h; loading results and pairing items |
+| `hypotheses.py`, `summary.py` | the pre-registered tests and `hypothesis_summary.csv` |
+| `descriptive.py`, `robustness.py`, `exploratory.py` | descriptive tables; controls and determinism; exploratory tables |
+| `figures.py` | the three figures at A1 print size |
 
 Every table and figure is rebuilt from `results/` alone (no model or GPU needed):
 
