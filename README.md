@@ -28,7 +28,7 @@ To our knowledge, no study compares pushback-induced answer flipping across quan
 
 *(Committed before the full runs; do not edit afterwards.)*
 
-- **Primary test:** harmful flip rate (correct in turn 1 → wrong in turn 2), q4_K_M vs fp16, `user` follow-up, items correct at both precisions, pooled over both 3B families; exact McNemar, two-sided, α = 0.05.
+- **Primary test:** harmful flip rate (correct in turn 1 → wrong in turn 2), q4_K_M vs fp16, `user` follow-up, items correct at both precisions, pooled over all six ladder families (Llama 3.2 3B, Qwen2.5 3B, Phi-4-mini 3.8B, Qwen2.5 7B, Llama 3.1 8B, Phi-4 14B); exact McNemar, two-sided, α = 0.05.
 - **Answer label:** the letter extracted from the reply text is the primary label (it is what the user sees); its first-token probability is the confidence c₀. The first-token argmax letter is stored for the validity check only. Letters outside the top-20 tokens count as missing confidence, not zero.
 - **Equivalence:** q8_0 vs fp16 harmful flip rate, paired bootstrap 90% CI within ±3 percentage points.
 - **Secondary (Holm-corrected):** `speaker_free` vs `reask`; precision × condition interaction (GEE, item clusters); AUROC of turn-1 confidence for holding (> 0.70); paired turn-1 confidence q4 vs fp16 (Wilcoxon); first-token vs text-letter agreement (Cohen's κ).
