@@ -485,8 +485,9 @@ def precision_by_condition(main: pd.DataFrame) -> pd.DataFrame:
 def hypothesis_summary(primary, h1b, sec, auroc, conf, gee, kappa) -> pd.DataFrame:
     """One row per pre-registered hypothesis: estimate, interval, p and whether the rule is met.
 
-    Rules as in the README pre-registration and notes/GUIDELINES §6. `rule_met` is 'n/a' where
-    no numeric rule was fixed in advance.
+    Rules as in the README pre-registration; where the README names a test without a numeric
+    threshold, the decision rule written down before the runs is used and printed in the `rule`
+    column. `rule_met` is 'n/a' where no numeric rule was fixed in advance.
     """
     def pct(x):
         return f"{100 * x:.1f}"
