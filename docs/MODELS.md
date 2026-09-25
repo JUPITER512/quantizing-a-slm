@@ -4,7 +4,9 @@ Hardware: RTX 4050 Laptop GPU (6 GB VRAM), 32 GB DDR5, i7-13620H. Everything run
 
 **Rule:** all precisions of one family come from the **same source** (Ollama's own library tags), so the only difference between them is quantization. If a tag is missing, switch the **whole family** to one Hugging Face GGUF repository — never mix sources inside a family.
 
-## 1. Precision ladder (main test: RQ1–RQ3)
+All six families below run as **full precision ladders** (q4_K_M, q8_0, fp16): 18 configurations, decided on 25.09.2026 before the pre-registration commit. Section 1 holds the three small families, section 2 the three larger ones.
+
+## 1. Precision ladder, small models (RQ1–RQ3)
 
 | Family | Ollama pull tags | Size approx. | Fits 6 GB? | Pages |
 |---|---|---|---|---|
@@ -14,17 +16,19 @@ Hardware: RTX 4050 Laptop GPU (6 GB VRAM), 32 GB DDR5, i7-13620H. Everything run
 
 Third family added on 24.09.2026, before the pre-registration commit (all three tags checked in the Ollama registry that day). It adds a third developer (Meta, Alibaba, Microsoft); note it is slightly larger (3.8B) than the two 3B families.
 
-## 2. Size check (RQ4, supports RQ1)
+## 2. Precision ladder, larger models (RQ1 at larger size; RQ4)
 
 | Family | Ollama pull tags | Size approx. | Fits 6 GB? | Pages |
 |---|---|---|---|---|
-| Qwen2.5 7B Instruct | `qwen2.5:7b-instruct-q4_K_M` · `qwen2.5:7b-instruct-q8_0` | 4.7 / 8.1 GB | q4 yes; q8 with heavy offload | [Ollama](https://ollama.com/library/qwen2.5) · [model card](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) |
-| Llama 3.1 8B Instruct | `llama3.1:8b-instruct-q4_K_M` · `llama3.1:8b-instruct-q8_0` | 4.9 / 8.5 GB | q4 yes; q8 with heavy offload | [Ollama](https://ollama.com/library/llama3.1) · [tags](https://ollama.com/library/llama3.1/tags) · [model card](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) |
-| Phi-4 14B | `phi4:14b-q4_K_M` only | 9.1 GB | no: heavy CPU offload (~1 h per run) | [Ollama](https://ollama.com/library/phi4) · [tags](https://ollama.com/library/phi4/tags) · [model card](https://huggingface.co/microsoft/phi-4) |
+| Qwen2.5 7B Instruct | `qwen2.5:7b-instruct-q4_K_M` · `qwen2.5:7b-instruct-q8_0` · `qwen2.5:7b-instruct-fp16` | 4.7 / 8.1 / 15.2 GB | q4 yes; q8, fp16 with heavy offload | [Ollama](https://ollama.com/library/qwen2.5) · [model card](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) |
+| Llama 3.1 8B Instruct | `llama3.1:8b-instruct-q4_K_M` · `llama3.1:8b-instruct-q8_0` · `llama3.1:8b-instruct-fp16` | 4.9 / 8.5 / 16.1 GB | q4 yes; q8, fp16 with heavy offload | [Ollama](https://ollama.com/library/llama3.1) · [tags](https://ollama.com/library/llama3.1/tags) · [model card](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) |
+| Phi-4 14B | `phi4:14b-q4_K_M` · `phi4:14b-q8_0` · `phi4:14b-fp16` | 9.1 / 15.6 / 29.3 GB | no: heavy CPU offload | [Ollama](https://ollama.com/library/phi4) · [tags](https://ollama.com/library/phi4/tags) · [model card](https://huggingface.co/microsoft/phi-4) |
 
-Phi-4 14B added on 24.09.2026, before the pre-registration commit. Only q4_K_M: q8_0 (15.6 GB) and fp16 (29.3 GB) would run almost entirely on the CPU. Its RQ4 pair is Phi-4-mini 3.8B fp16 (7.7 GB): similar memory, more parameters at 4 bits vs fewer at 16 bits, same developer. Like Llama 3.1 8B vs 3.2 3B, the two are separately trained models, so the comparison is descriptive only.
+History: Phi-4 14B q4_K_M was added on 24.09.2026; on 25.09.2026 (still before the pre-registration commit) all three larger families were extended to full ladders. All tags are Ollama library tags (same source per family), checked in the registry.
 
-Your existing `qwen2.5:7b` and `llama3.1:8b` are the q4_K_M builds; confirm with `ollama show qwen2.5:7b` and reuse them.
+**RQ4 (bits or size?)** stays descriptive: at similar memory, compare a larger model at 4 bits with a smaller one at 16 bits from the same developer — Llama 3.1 8B q4_K_M (4.9 GB) vs Llama 3.2 3B fp16 (6.4 GB); Phi-4 14B q4_K_M (9.1 GB) vs Phi-4-mini fp16 (7.7 GB). The pairs are separately trained models.
+
+**Measured speed on this laptop** (20-item pilots, 5 calls per item): llama3.1 8B fp16 2.4 min (24 % on GPU); phi4 14B q4 3.6 min (41 %), q8 5.9 min (24 %). Full runs (300 items) take about 15× as long. `phi4:14b-fp16` loads (debug run 1.7 min) but uses all free RAM: close other programs and run it alone, last.
 
 ## 3. Optional
 
@@ -84,7 +88,7 @@ Pull syntax: `ollama pull hf.co/<user>/<repo>:<quant>` ([Hugging Face docs](http
 - exact pull string and `ollama show <tag>` output (parameters, quantization, context length);
 - digest from `ollama list`;
 - `ollama --version`;
-- CPU/GPU split from `ollama ps` while it runs (fp16 and q8 7B/8B are partly on the CPU — this affects speed, not the outputs you analyse);
+- CPU/GPU split from `ollama ps` while it runs (fp16 3B/3.8B and all q8/fp16 7B–14B are partly on the CPU — this affects speed, not the outputs you analyse);
 - run date and time.
 
 ## 9. Disk space
@@ -94,15 +98,16 @@ Pull syntax: `ollama pull hf.co/<user>/<repo>:<quant>` ([Hugging Face docs](http
 | Llama 3.2 3B ladder | ~12 GB |
 | Qwen2.5 3B ladder | ~11 GB |
 | Phi-4-mini 3.8B ladder | ~14 GB |
-| Phi-4 14B q4_K_M | ~9 GB |
-| Qwen2.5 7B q8_0 + Llama 3.1 8B q8_0 | ~17 GB |
-| Gemma 4 12B | ~8 GB |
-| **Total** | **~48 GB** |
+| Qwen2.5 7B ladder | ~28 GB |
+| Llama 3.1 8B ladder | ~30 GB |
+| Phi-4 14B ladder | ~54 GB |
+| Gemma 4 12B (optional) | ~8 GB |
+| **Total** | **~157 GB** |
 
-Models live in `C:\Users\<you>\.ollama\models`. To use another drive, set `OLLAMA_MODELS` before pulling and restart Ollama. If space is short, skip the two q8_0 size-check models first.
+Models live in `C:\Users\<you>\.ollama\models` by default. To use another drive, set the user environment variable `OLLAMA_MODELS` (e.g. `D:\ollama\models`), move or re-pull the models there and restart Ollama; the server log line `OLLAMA_MODELS:` shows which folder is in use. Digests do not change when files are moved.
 
 ## 10. What not to use
 
-- fp16 of 7B/8B models (~15–16 GB, almost all on the CPU) — unless 100 items overnight.
+- Two models at the same time (never; the runner unloads each model after its run).
 - Reasoning models through the API (hidden tokens would eat the $5).
 - Different fine-tunes presented as "the same model at another precision".

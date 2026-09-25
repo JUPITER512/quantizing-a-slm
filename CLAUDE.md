@@ -20,7 +20,8 @@ Exists: `README.md` (with the pre-registration), `docs/` (models, datasets, refe
 
 - Windows 11, PowerShell. Python 3.11 in `.venv` (created with `uv venv`). No PyTorch needed.
 - Ollama at `http://localhost:11434`. Use the **native `/api/chat` endpoint** (not `/v1`) so `logprobs` / `top_logprobs` are returned.
-- Hardware: RTX 4050 Laptop, 6 GB VRAM; 32 GB RAM. fp16 3B/3.8B and q8_0 7B/8B models partly run on the CPU and are slow. Never run two models at the same time.
+- Hardware: RTX 4050 Laptop, 6 GB VRAM; 32 GB RAM. fp16 3B/3.8B and all q8_0/fp16 7B–14B models partly run on the CPU and are slow; `phi4:14b-fp16` (29 GB) uses all free RAM, so run it alone with other programs closed. Never run two models at the same time.
+- Models are stored in `D:\ollama\models` (user variable `OLLAMA_MODELS`).
 - OpenAI reference model (gpt-4o-mini) reads the key from the `OPENAI_API_KEY` environment variable only.
 
 ## Commands
