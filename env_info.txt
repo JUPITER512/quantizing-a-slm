@@ -223,3 +223,163 @@ digest 227695f919b501265964e3024cbbd49c75a3a95e6826252b4df11d31dec00460
 details {"parent_model": "/Users/ollama/.ollama/models/blobs/sha256-4ed22bb5bf7fd66882e72b7cc61b41d80efde1aabf6b273097634af1ce468c2d", "format": "gguf", "family": "phi3", "families": ["phi3"], "parameter_size": "14.7B", "quantization_level": "F16"}
 gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
 loaded size 30.73 GB, on GPU 3.68 GB (12%)
+
+=== 2026-09-25T10:43:59  llama3.2:3b-instruct-q4_K_M  -> llama3.2_3b-instruct-q4_K_M__reversed.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72
+details {"parent_model": "", "format": "gguf", "family": "llama", "families": ["llama"], "parameter_size": "3.2B", "quantization_level": "Q4_K_M"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 2.55 GB, on GPU 2.55 GB (100%)
+
+=== 2026-09-25T10:44:36  llama3.2:3b-instruct-q4_K_M  -> llama3.2_3b-instruct-q4_K_M__para1.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72
+details {"parent_model": "", "format": "gguf", "family": "llama", "families": ["llama"], "parameter_size": "3.2B", "quantization_level": "Q4_K_M"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 2.55 GB, on GPU 2.55 GB (100%)
+
+=== 2026-09-25T10:45:14  llama3.2:3b-instruct-q4_K_M  -> llama3.2_3b-instruct-q4_K_M__para2.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72
+details {"parent_model": "", "format": "gguf", "family": "llama", "families": ["llama"], "parameter_size": "3.2B", "quantization_level": "Q4_K_M"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 2.55 GB, on GPU 2.55 GB (100%)
+
+=== 2026-09-25T10:45:52  llama3.2:3b-instruct-fp16  -> llama3.2_3b-instruct-fp16__reversed.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest 195a8c01d91ec3cb1e0aad4624a51f2602c51fa7d96110f8ab5a20c84081804d
+details {"parent_model": "/Users/administrator/.ollama/models/blobs/sha256-e2f46f5b501c2982b2c495a4694cb4e620aabfa2c37ebb23a90ffc8cce93854b", "format": "gguf", "family": "llama", "families": ["llama"], "parameter_size": "3.2B", "quantization_level": "F16"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 7.82 GB, on GPU 4.18 GB (53%)
+
+=== 2026-09-25T10:48:55  llama3.2:3b-instruct-fp16  -> llama3.2_3b-instruct-fp16__para1.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest 195a8c01d91ec3cb1e0aad4624a51f2602c51fa7d96110f8ab5a20c84081804d
+details {"parent_model": "/Users/administrator/.ollama/models/blobs/sha256-e2f46f5b501c2982b2c495a4694cb4e620aabfa2c37ebb23a90ffc8cce93854b", "format": "gguf", "family": "llama", "families": ["llama"], "parameter_size": "3.2B", "quantization_level": "F16"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 7.82 GB, on GPU 4.18 GB (53%)
+
+=== 2026-09-25T10:51:47  llama3.2:3b-instruct-fp16  -> llama3.2_3b-instruct-fp16__para2.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest 195a8c01d91ec3cb1e0aad4624a51f2602c51fa7d96110f8ab5a20c84081804d
+details {"parent_model": "/Users/administrator/.ollama/models/blobs/sha256-e2f46f5b501c2982b2c495a4694cb4e620aabfa2c37ebb23a90ffc8cce93854b", "format": "gguf", "family": "llama", "families": ["llama"], "parameter_size": "3.2B", "quantization_level": "F16"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 7.82 GB, on GPU 4.18 GB (53%)
+
+=== 2026-09-25T10:54:36  qwen2.5:3b-instruct-q4_K_M  -> qwen2.5_3b-instruct-q4_K_M__reversed.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest 357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b
+details {"parent_model": "", "format": "gguf", "family": "qwen2", "families": ["qwen2"], "parameter_size": "3.1B", "quantization_level": "Q4_K_M"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 2.16 GB, on GPU 2.16 GB (100%)
+
+=== 2026-09-25T10:55:11  qwen2.5:3b-instruct-q4_K_M  -> qwen2.5_3b-instruct-q4_K_M__para1.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest 357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b
+details {"parent_model": "", "format": "gguf", "family": "qwen2", "families": ["qwen2"], "parameter_size": "3.1B", "quantization_level": "Q4_K_M"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 2.16 GB, on GPU 2.16 GB (100%)
+
+=== 2026-09-25T10:55:46  qwen2.5:3b-instruct-q4_K_M  -> qwen2.5_3b-instruct-q4_K_M__para2.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest 357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b
+details {"parent_model": "", "format": "gguf", "family": "qwen2", "families": ["qwen2"], "parameter_size": "3.1B", "quantization_level": "Q4_K_M"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 2.16 GB, on GPU 2.16 GB (100%)
+
+=== 2026-09-25T10:56:21  qwen2.5:3b-instruct-fp16  -> qwen2.5_3b-instruct-fp16__reversed.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest de47f806df145a7f39177339d025dfada5e87c294a76f0d46392ce48cd5168a1
+details {"parent_model": "/Users/ollama/.ollama/models/blobs/sha256-bfa0216b48c79e4518d5c69ee572eaf8b517892a19048b9e7388fb1442165cdb", "format": "gguf", "family": "qwen2", "families": ["qwen2"], "parameter_size": "3.1B", "quantization_level": "F16"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 7.07 GB, on GPU 4.21 GB (60%)
+
+=== 2026-09-25T10:58:51  qwen2.5:3b-instruct-fp16  -> qwen2.5_3b-instruct-fp16__para1.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest de47f806df145a7f39177339d025dfada5e87c294a76f0d46392ce48cd5168a1
+details {"parent_model": "/Users/ollama/.ollama/models/blobs/sha256-bfa0216b48c79e4518d5c69ee572eaf8b517892a19048b9e7388fb1442165cdb", "format": "gguf", "family": "qwen2", "families": ["qwen2"], "parameter_size": "3.1B", "quantization_level": "F16"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 7.07 GB, on GPU 4.21 GB (60%)
+
+=== 2026-09-25T11:01:20  qwen2.5:3b-instruct-fp16  -> qwen2.5_3b-instruct-fp16__para2.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest de47f806df145a7f39177339d025dfada5e87c294a76f0d46392ce48cd5168a1
+details {"parent_model": "/Users/ollama/.ollama/models/blobs/sha256-bfa0216b48c79e4518d5c69ee572eaf8b517892a19048b9e7388fb1442165cdb", "format": "gguf", "family": "qwen2", "families": ["qwen2"], "parameter_size": "3.1B", "quantization_level": "F16"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 7.07 GB, on GPU 4.21 GB (60%)
+
+=== 2026-09-25T11:03:48  phi4-mini:3.8b-q4_K_M  -> phi4-mini_3.8b-q4_K_M__reversed.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest 78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753
+details {"parent_model": "", "format": "gguf", "family": "phi3", "families": ["phi3"], "parameter_size": "3.8B", "quantization_level": "Q4_K_M"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 3.09 GB, on GPU 3.09 GB (100%)
+
+=== 2026-09-25T11:04:44  phi4-mini:3.8b-q4_K_M  -> phi4-mini_3.8b-q4_K_M__para1.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest 78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753
+details {"parent_model": "", "format": "gguf", "family": "phi3", "families": ["phi3"], "parameter_size": "3.8B", "quantization_level": "Q4_K_M"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 3.09 GB, on GPU 3.09 GB (100%)
+
+=== 2026-09-25T11:05:35  phi4-mini:3.8b-q4_K_M  -> phi4-mini_3.8b-q4_K_M__para2.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest 78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753
+details {"parent_model": "", "format": "gguf", "family": "phi3", "families": ["phi3"], "parameter_size": "3.8B", "quantization_level": "Q4_K_M"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 3.09 GB, on GPU 3.09 GB (100%)
+
+=== 2026-09-25T11:06:32  phi4-mini:3.8b-fp16  -> phi4-mini_3.8b-fp16__reversed.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest bd71721a0e80972aa68bd0f8999c6f3cfe32df211fe8def2d9490b508ada5e68
+details {"parent_model": "/Users/administrator/.ollama/models/blobs/sha256-e7bb32183dad1cc57730edf523bd6ac18716005bb579384d279e029e63828f97", "format": "gguf", "family": "phi3", "families": ["phi3"], "parameter_size": "3.8B", "quantization_level": "F16"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 9.64 GB, on GPU 4.25 GB (44%)
+
+=== 2026-09-25T11:11:15  phi4-mini:3.8b-fp16  -> phi4-mini_3.8b-fp16__para1.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest bd71721a0e80972aa68bd0f8999c6f3cfe32df211fe8def2d9490b508ada5e68
+details {"parent_model": "/Users/administrator/.ollama/models/blobs/sha256-e7bb32183dad1cc57730edf523bd6ac18716005bb579384d279e029e63828f97", "format": "gguf", "family": "phi3", "families": ["phi3"], "parameter_size": "3.8B", "quantization_level": "F16"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 9.64 GB, on GPU 4.25 GB (44%)
+
+=== 2026-09-25T11:15:51  phi4-mini:3.8b-fp16  -> phi4-mini_3.8b-fp16__para2.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest bd71721a0e80972aa68bd0f8999c6f3cfe32df211fe8def2d9490b508ada5e68
+details {"parent_model": "/Users/administrator/.ollama/models/blobs/sha256-e7bb32183dad1cc57730edf523bd6ac18716005bb579384d279e029e63828f97", "format": "gguf", "family": "phi3", "families": ["phi3"], "parameter_size": "3.8B", "quantization_level": "F16"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 9.64 GB, on GPU 4.25 GB (44%)
+
+=== 2026-09-25T11:21:03  qwen2.5:3b-instruct-fp16  -> qwen2.5_3b-instruct-fp16__main__det1.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest de47f806df145a7f39177339d025dfada5e87c294a76f0d46392ce48cd5168a1
+details {"parent_model": "/Users/ollama/.ollama/models/blobs/sha256-bfa0216b48c79e4518d5c69ee572eaf8b517892a19048b9e7388fb1442165cdb", "format": "gguf", "family": "qwen2", "families": ["qwen2"], "parameter_size": "3.1B", "quantization_level": "F16"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 7.07 GB, on GPU 4.21 GB (60%)
+
+=== 2026-09-25T11:22:27  qwen2.5:3b-instruct-fp16  -> qwen2.5_3b-instruct-fp16__main__det2.jsonl
+python 3.11.9 | Windows-10-10.0.26200-SP0
+ollama 0.34.3
+digest de47f806df145a7f39177339d025dfada5e87c294a76f0d46392ce48cd5168a1
+details {"parent_model": "/Users/ollama/.ollama/models/blobs/sha256-bfa0216b48c79e4518d5c69ee572eaf8b517892a19048b9e7388fb1442165cdb", "format": "gguf", "family": "qwen2", "families": ["qwen2"], "parameter_size": "3.1B", "quantization_level": "F16"}
+gpu NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 560.94
+loaded size 7.07 GB, on GPU 4.21 GB (60%)
