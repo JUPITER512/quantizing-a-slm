@@ -23,3 +23,5 @@ poster/
 CLAUDE.local.md
 # local preview server config for Claude Code
 .claude/launch.json
+# Claude Code project memory (kept locally, not part of the public repo)
+CLAUDE.md
