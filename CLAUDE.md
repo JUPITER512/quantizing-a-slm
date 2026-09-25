@@ -8,7 +8,7 @@ Empirical NLP poster (Trier University, SoSe 2026). We ask small local LLMs Engl
 
 ## Status and build order
 
-Exists: `README.md` (with the pre-registration), `docs/` (models, datasets, references, flow diagrams), `requirements.txt`. Build one step at a time, with tests, in this order:
+Status (25.09.2026): all five steps are built and tested; pre-registration committed (099408a); all runs done and tagged `data-frozen`; `analysis/` and `figures/` generated. The poster and appendix are built privately in `poster/` (`build_poster.py`, `build_appendix.py`, `make_submission.py`); the poster prose in `poster/poster_text.md` is written by the student. Build order that was followed:
 
 1. `scripts/build_items.py` → `data/items.jsonl` + `data/followups.json` (rules and wording in `docs/DATASETS.md`)
 2. `tests/mock_ollama.py` + unit tests
