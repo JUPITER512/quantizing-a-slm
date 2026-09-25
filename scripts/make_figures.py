@@ -10,6 +10,7 @@ Precision colours and markers are fixed; colour is never the only cue (marker sh
 from __future__ import annotations
 
 import argparse
+import io
 import sys
 from pathlib import Path
 
@@ -58,10 +59,12 @@ def check_fonts(fig) -> None:
 
 
 def save(fig, out_dir: Path, name: str) -> None:
+    """Write the SVG with LF line endings so rebuilds are byte-identical on every OS."""
     check_fonts(fig)
-    path = out_dir / name
-    fig.savefig(path, format="svg", metadata={"Date": None})
+    buf = io.BytesIO()
+    fig.savefig(buf, format="svg", metadata={"Date": None})
     plt.close(fig)
+    (out_dir / name).write_bytes(buf.getvalue().replace(b"\r\n", b"\n"))
     print(f"  {name}")
 
 
