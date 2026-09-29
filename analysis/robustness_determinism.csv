@@ -1,0 +1,3 @@
+model,compare,n,same_a0,same_a1,same_raw_0,same_raw_1,max_abs_diff_c0
+qwen2.5:3b-instruct-fp16,det1 vs det2,200,1,1,1,1,0
+qwen2.5:3b-instruct-fp16,det1 vs main,200,1,0.98,1,0.98,0.0308355
