@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # so that `impo
 
 from cavein.config import ANALYSIS_DIR, ITEMS_FILE, RESULTS_DIR, TOST_MARGIN
 from cavein.descriptive import confidence_bins, descriptives, overview, size_comparison
-from cavein.exploratory import precision_by_condition
+from cavein.exploratory import precision_by_condition,leave_one_family_out
 from cavein.hypotheses import auroc_table, gee_models, primary_and_h1b, secondary, validity_kappa
 from cavein.results import load_results, main_data
 from cavein.robustness import controls, determinism
@@ -65,6 +65,7 @@ def main(argv=None):
         ("robustness_controls.csv", controls(df)),
         ("robustness_determinism.csv", determinism(df)),
         ("exploratory_precision_by_condition.csv", precision_by_condition(main_df)),
+        ("exploratory_leave_one_family_out.csv", leave_one_family_out(main_df))
     ]
     print(f"writing to {args.out_dir}")
     for name, table in tables:
