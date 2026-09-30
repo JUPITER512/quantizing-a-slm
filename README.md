@@ -7,7 +7,7 @@ NLP seminar poster project, Trier University, SoSe 2026.
 
 A model answers a multiple-choice question correctly; a follow-up message then disagrees. Does the same model switch more often when it runs at 4-bit (q4_K_M) than at 8-bit (q8_0) or 16-bit (fp16)? And how much of the switching needs a person at all, rather than just a written alternative answer?
 
-To our knowledge, no study compares pushback-induced answer flipping across quantization precisions of the same model, nor separates a speaker-free floor from social pressure under quantization (closest: Fu et al., 2025; Hu & Qu, 2026; Hong et al., 2024; Proskurina et al., 2024).
+To my knowledge, no study compares pushback-induced answer flipping across quantization precisions of the same model, nor separates a speaker-free floor from social pressure under quantization (closest: Fu et al., 2025; Hu & Qu, 2026; Hong et al., 2024; Proskurina et al., 2024).
 
 ## Design
 
