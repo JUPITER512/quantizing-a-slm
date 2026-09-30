@@ -76,4 +76,4 @@ Configurations: the 18 tags in `docs/MODELS.md` (six families × q4_K_M, q8_0, f
 - MMLU-Pro (Wang et al., 2024), MIT: https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro
 - ARC-Challenge (Clark et al., 2018), CC BY-SA 4.0: https://huggingface.co/datasets/allenai/ai2_arc — ARC-derived items in `data/items.jsonl` remain under CC BY-SA 4.0.
 
-Details: [`docs/DATASETS.md`](docs/DATASETS.md) (data), [`docs/MODELS.md`](docs/MODELS.md) (models and settings), [`docs/REFERENCES_APA.md`](docs/REFERENCES_APA.md) (sources cited on the poster, APA 7), [`docs/REFERENCES.md`](docs/REFERENCES.md) (wider literature with notes).
+Details: [`docs/DATASETS.md`](docs/DATASETS.md) (data), [`docs/MODELS.md`](docs/MODELS.md) (models and settings)
