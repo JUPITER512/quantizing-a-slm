@@ -43,22 +43,21 @@ Pre-registered hypotheses, from [`analysis/hypothesis_summary.csv`](analysis/hyp
 | H1b | q8_0 ≈ fp16 within ±3 pp | paired bootstrap, 90 % CI | −0.4 pp [−1.1, +0.3] | yes |
 | H2a | `speaker_free` flips more than `reask` | McNemar per configuration, Holm | higher in 15 of 18, lower in 3 | yes |
 | H2b | precision × follow-up interaction | GEE, joint Wald, Holm | p_Holm < .001 | yes |
-| H3a | turn-1 confidence predicts holding (AUROC > .70) | AUROC, item bootstrap | 0.63 [0.62, 0.65] | no |
-| H3b | turn-1 confidence lower at q4_K_M | Wilcoxon, Holm; bootstrap CI | −0.0038 [−0.0078, +0.0004] | no |
 | validity | first-token letter = text letter | Cohen's κ | κ ≥ 0.986 in every configuration | – |
+
+The two pre-registered confidence tests (H3a, H3b) were also run; neither rule was met. They are not part of the poster's focus; their results are in [`analysis/hypothesis_summary.csv`](analysis/hypothesis_summary.csv).
 
 Everything not listed above is descriptive, robustness or exploratory, and the file names say so (`robustness_*.csv`, `exploratory_*.csv`). Figures: [`figures/`](figures/).
 
 ## Reproduce
 
 ```
-data/        items.jsonl, followups.json        (frozen with the pre-registration, commit 099408a)
+data/        items.jsonl, followups.json        (frozen with the pre-registration, commit 5536154)
 cavein/      the Python package with all the logic (one module per job, see the table below)
 scripts/     command-line scripts: build_items.py -> run_pushback.py -> analyze.py -> make_figures.py
 results/     raw model outputs, one JSONL per configuration and variant (read-only since tag data-frozen)
 analysis/    CSV tables written by analyze.py
 figures/     SVG figures written by make_figures.py
-tests/       one test file per module, plus a fake Ollama server (tests/mock_ollama.py)
 docs/        models, datasets, references, flow diagrams
 ```
 
@@ -78,7 +77,6 @@ Every table and figure is rebuilt from `results/` alone (no model or GPU needed)
 ```powershell
 uv venv --python 3.11 .venv; .venv\Scripts\activate
 uv pip install -r requirements.lock.txt      # exact versions used
-python -m pytest tests                       # unit tests + mock-server tests
 python scripts/analyze.py                    # results/  -> analysis/*.csv  (about 5 minutes)
 python scripts/make_figures.py               # analysis/ -> figures/*.svg
 ```
