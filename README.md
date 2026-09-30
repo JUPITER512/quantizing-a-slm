@@ -26,23 +26,6 @@ To our knowledge, no study compares pushback-induced answer flipping across quan
 
 
 
-## Results at a glance
-
-Pre-registered hypotheses, from [`analysis/hypothesis_summary.csv`](analysis/hypothesis_summary.csv) (items correct in turn 1 at both precisions; `user` follow-up unless stated):
-
-| | Prediction | Test | Result | Pre-registered rule met |
-|---|---|---|---|---|
-| H1a (primary) | q4_K_M flips more than fp16 (pooled, six families) | exact McNemar | 59.7 % vs 62.6 % (−2.9 pp), p < .001 | no |
-| H1b | q8_0 ≈ fp16 within ±3 pp | paired bootstrap, 90 % CI | −0.4 pp [−1.1, +0.3] | yes |
-| H2a | `speaker_free` flips more than `reask` | McNemar per configuration, Holm | higher in 15 of 18, lower in 3 | yes |
-| H2b | precision × follow-up interaction | GEE, joint Wald, Holm | p_Holm < .001 | yes |
-| validity | first-token letter = text letter | Cohen's κ | κ ≥ 0.986 in every configuration | – |
-
-The two pre-registered confidence tests (H3a, H3b) were also run; neither rule was met. They are not part of the poster's focus; their results are in [`analysis/hypothesis_summary.csv`](analysis/hypothesis_summary.csv).
-
-Everything not listed above is descriptive, robustness or exploratory, and the file names say so (`robustness_*.csv`, `exploratory_*.csv`).
-
-
 
 ## Reproduce
 
